@@ -9,7 +9,7 @@ def create_homepage(apps, schema_editor):
     ContentType = apps.get_model("contenttypes.ContentType")
     Page = apps.get_model("wagtailcore.Page")
     Site = apps.get_model("wagtailcore.Site")
-    ProjectWebPage = apps.get_model("home.ProjectWebPage")
+    ProjectWebPage = apps.get_model("testapp.ProjectWebPage")
 
     # Delete the default homepage
     # If migration is run multiple times, it may have already been deleted
@@ -40,7 +40,7 @@ def create_homepage(apps, schema_editor):
 def remove_homepage(apps, schema_editor):
     # Get models
     content_type = apps.get_model("contenttypes.ContentType")
-    project_web_page = apps.get_model("home.ProjectWebPage")
+    project_web_page = apps.get_model("testapp.ProjectWebPage")
 
     # Delete the default homepage
     # Page and Site objects CASCADE
@@ -54,7 +54,7 @@ class Migration(migrations.Migration):
     dependencies = [
         ("cjkcms", "0001_initial"),
         ("wagtailcore", "0057_page_locale_fields_notnull"),
-        ("home", "0001_initial"),
+        ("testapp", "0001_initial"),
     ]
 
     operations = [

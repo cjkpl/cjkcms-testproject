@@ -7,7 +7,8 @@ DEBUG = True
 SECRET_KEY = "mysecretkey4testing"
 ALLOWED_HOSTS = ["*"]
 INSTALLED_APPS = [
-    "home",
+    "myapp",  # replace with your app name
+    "testapp",  # e.g. for testing custom blocks
     # --- wagtail-cjkcms + requirements #
     "cjkcms",
     "wagtailseo",

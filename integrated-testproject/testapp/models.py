@@ -11,8 +11,6 @@ class ProjectArticlePage(CjkcmsArticlePage):
 
 
 class ProjectArticleIndexPage(CjkcmsArticleIndexPage):
-    # Only allow ArticlePages beneath this page.
-    subpage_types = ["home.ProjectArticlePage", "cjkcms.ArticlePage"]
     template = "cjkcms/pages/article_index_page.html"
 
 
