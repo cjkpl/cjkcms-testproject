@@ -26,9 +26,9 @@ If you use pytest, add the following to your `pyproject.toml` file, to let pytes
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "myapp.tests.settings"
 # optional: if you want to use doctests, and get duration of each test
-addopts = --doctest-modules --durations=0
+addopts = "--doctest-modules --durations=0"
 # optional - if you want to ignore specific folders 
-norecursedirs = project_template
+norecursedirs = "project_template"
 
 ```
 Replace `myapp` with your app name in: 
