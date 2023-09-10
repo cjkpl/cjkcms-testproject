@@ -20,6 +20,8 @@ INSTALLED_APPS = [
     # --- end-wagtail-cjkcms #
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
+    "wagtail.contrib.sitemaps",
+    "django.contrib.sitemaps",
     "wagtail.embeds",
     "wagtail.sites",
     "wagtail.users",

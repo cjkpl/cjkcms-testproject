@@ -11,7 +11,7 @@ SECRET_KEY = "mysecretkey4testing"
 ALLOWED_HOSTS = ["*"]
 INSTALLED_APPS = [
     "myapp",  # replace with your app name
-    "myapp.testapp.apps.TestAppConfig",  # replace `myapp` with your app name
+    "myapp.tests.testapp.apps.TestAppConfig",  # replace `myapp` with your app name
     # --- wagtail-cjkcms + requirements #
     "cjkcms",
     "wagtailseo",
@@ -23,6 +23,8 @@ INSTALLED_APPS = [
     # --- end-wagtail-cjkcms #
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
+    "wagtail.contrib.sitemaps",
+    "django.contrib.sitemaps",
     "wagtail.embeds",
     "wagtail.sites",
     "wagtail.users",

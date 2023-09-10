@@ -2,7 +2,7 @@
 
 ## For Wagtail (optionally with CMS) app testing
 
-Version 1.1 (2023-09-01)
+Version 1.2 (2023-09-10)
 
 When we create an installable application, it should be testable outside of the context of a specific Wagtail project. Therefore, we must provide a portable, minimal django project configuration & setup for such an application.
 
@@ -22,9 +22,14 @@ Copy the contents of `integrated-testproject` folder to your `myapp/tests` folde
 
 If you use pytest, add the following to your `pyproject.toml` file, to let pytest know which settings file to use. Replace `myapp` with your app name:
 
-```
+```toml
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "myapp.tests.settings"
+# optional: if you want to use doctests, and get duration of each test
+addopts = --doctest-modules --durations=0
+# optional - if you want to ignore specific folders 
+norecursedirs = project_template
+
 ```
 Replace `myapp` with your app name in: 
 - `settings.py` (INSTALED_APPS) - twice:
@@ -32,7 +37,7 @@ Replace `myapp` with your app name in:
 ```python
 INSTALLED_APPS = [
     "myapp",  # replace with your app name
-    "myapp.testapp.apps.TestAppConfig",  # replace `myapp`
+    "myapp.tests.testapp.apps.TestAppConfig",  # replace `myapp`
     ...
     ]
 ```
@@ -46,7 +51,7 @@ class TestAppConfig(AppConfig):
 
 1. You can run your tests executing in your repo root folder:
 ```
-pytest
+pytest myapp
 ```
 
 2. If you use standard django test runner, execute:

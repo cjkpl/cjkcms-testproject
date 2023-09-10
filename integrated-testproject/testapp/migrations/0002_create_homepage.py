@@ -17,13 +17,13 @@ def create_homepage(apps, schema_editor):
 
     # Create content type for homepage model
     project_webpage_content_type, __ = ContentType.objects.get_or_create(
-        model="projectwebpage", app_label="home"
+        model="projectwebpage", app_label="testapp"
     )
 
     # Create a new homepage
     homepage = ProjectWebPage.objects.create(
-        title="app Home",
-        draft_title="app Home",
+        title="App Home",
+        draft_title="App Home",
         slug="home",
         content_type=project_webpage_content_type,
         path="00010001",
