@@ -12,11 +12,13 @@ Get a local copy of the repository: download or clone it:
 ```git clone https://github.com/cjkpl/cjkcms-testproject.git```
 
 
-This repo contains three alternate setups for testing your app, each in separate subfolder of the repository. Choose one that suits your needs best - the "integrated-testproject" is most convinient, in my opinion.
+This repo contains three alternate setups for testing your app, each in separate subfolder of the repository. Choose one that suits your needs best.
 
 You should not use all three - choose one, and use files from the selected folder only in your application development.
 
 ## I. Integrated `testproject` in `myapp/tests` folder
+
+This one is probably the most complex to configure, but easiest to use once in place.
 
 Copy the contents of `integrated-testproject` folder to your `myapp/tests` folder. If you only use pytest (rather than standard django test runner), you can skip the `manage.py` file.
 
@@ -32,9 +34,10 @@ norecursedirs = "project_template"
 
 ```
 Replace `myapp` with your app name in: 
-- `settings.py` (INSTALED_APPS) - twice:
+- `settings.py` (INSTALED_APPS, and ROOT_URL_CONF) - in three places:
 
 ```python
+ROOT_URLCONF = "myapp.tests.urls"  # replace with your app name
 INSTALLED_APPS = [
     "myapp",  # replace with your app name
     "myapp.tests.testapp.apps.TestAppConfig",  # replace `myapp`

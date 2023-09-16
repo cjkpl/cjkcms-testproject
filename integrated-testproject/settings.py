@@ -9,6 +9,7 @@ BASE_URL = "http://localhost:8000"
 DEBUG = True
 SECRET_KEY = "mysecretkey4testing"
 ALLOWED_HOSTS = ["*"]
+ROOT_URLCONF = "myapp.tests.urls"  # replace with your app name
 INSTALLED_APPS = [
     "myapp",  # replace with your app name
     "myapp.tests.testapp.apps.TestAppConfig",  # replace `myapp` with your app name
@@ -21,6 +22,7 @@ INSTALLED_APPS = [
     "wagtail_color_panel",
     "django_bootstrap5",
     # --- end-wagtail-cjkcms #
+    "wagtail.contrib.routable_page",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.contrib.sitemaps",
@@ -53,7 +55,6 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
 ]
-ROOT_URLCONF = "urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",

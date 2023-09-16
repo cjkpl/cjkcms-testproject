@@ -31,6 +31,7 @@ def boot_django():
             "wagtail_color_panel",
             "django_bootstrap5",
             # --- end-wagtail-cjkcms #
+            "wagtail.contrib.routable_page",
             "wagtail.contrib.forms",
             "wagtail.contrib.redirects",
             "wagtail.contrib.sitemaps",
